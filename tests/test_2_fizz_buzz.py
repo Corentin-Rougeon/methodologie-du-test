@@ -24,20 +24,6 @@ def test_fizzbuzz(fizzbuzz):
 
 
 def test_loop(fizzbuzz):
-    expected = """1
-2
-Fizz
-4
-Buzz
-Fizz
-7
-8
-Fizz
-Buzz
-11
-Fizz
-13
-14
-FizzBuzz"""
+    expected = """1\n2\nFizz\n4\nBuzz\nFizz\n7\n8\nFizz\nBuzz\n11\nFizz\n13\n14\nFizzBuzz"""
 
     assert fizzbuzz.loop(15) == expected

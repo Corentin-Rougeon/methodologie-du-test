@@ -35,7 +35,6 @@ def test_valid4(bowling):
     assert bowling.score() == 30
 
 def test_full_score(bowling):
-
     for i in range(0,12):
         bowling.roll(10)
 

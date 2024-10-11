@@ -50,8 +50,6 @@ class Game:
         return self._score
 
 
-
-
 if __name__ == "__main__":
     game = Game()
     game.roll(10)
