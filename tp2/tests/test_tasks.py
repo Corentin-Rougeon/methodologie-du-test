@@ -31,23 +31,19 @@ def test_add_task(teardown,client):
 
 def test_complete_task(client):
     with app.app_context():
-        # Add a task
         response = client.post('/tasks', json=body)
         task_id = response.get_json()["id"]
 
-        # Complete the task
         response = client.post(f"/tasks/{task_id}/complete")
         assert response.status_code == 200
         assert response.get_json()["message"] == "Tâche marquée comme terminée"
 
 def test_cleanup_tasks(client):
     with app.app_context():
-        # Add a task with a past due date
         past_task = body.copy()
         past_task["due_date"] = "2022-01-01"
         client.post("/tasks", json=past_task)
 
-        # Perform cleanup
         response = client.delete("/tasks/cleanup")
         assert response.status_code == 200
         assert "tâches obsolètes ou complétées supprimées" in response.get_json()["message"]
