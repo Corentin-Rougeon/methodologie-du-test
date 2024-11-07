@@ -1,5 +1,5 @@
 import pytest
-from src.tasks import app, worth, is_date_and_in_past, get_existing_or_create_db
+from src.tasks import app, worth, is_date_and_in_past
 
 @pytest.fixture
 def test_app():
@@ -20,7 +20,7 @@ body = {
 
 # --- Step 1 ---
 
-def test_add_task(teardown,client):
+def test_add_task(client):
     with app.app_context():
         response = client.post('/tasks', json=body)
         assert response.status_code == 201
