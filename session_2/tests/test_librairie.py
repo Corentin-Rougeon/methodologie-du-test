@@ -20,3 +20,5 @@ def test_bad_url(client):
     response = client.get('/unknown-url')
     assert response.status_code == 404
     assert response.get_json() is None
+
+

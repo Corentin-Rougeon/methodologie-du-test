@@ -5,7 +5,7 @@ $VerbosePreference = "Continue"
 
 New-Item -ItemType Directory -Force -Path "var"
 
-python3 -m venv .venv
+python -m venv .venv
 & .\.venv\Scripts\Activate.ps1
-python3 -m pip install -r requirements.txt
-python3 src/librairie.py
+python -m pip install -r requirements.txt
+python src/librairie.py
